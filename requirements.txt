@@ -1,0 +1,20 @@
+# this is the requirements.txt file...
+
+#
+# DEVELOPMENT / PRODUCTION
+#
+
+Flask 
+gunicorn # for heroku
+
+python-dotenv
+pgeocode
+pandas
+requests
+sendgrid==6.6.0
+
+#
+# TEST
+#
+
+pytest
