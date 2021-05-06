@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, render_template, redirect, flash
 
-from app.weather_service import get_hourly_forecasts
+#from app.weather_service import get_hourly_forecasts
 
 currency_routes = Blueprint("currency_routes", __name__)
 
@@ -20,7 +20,7 @@ def currency_forecast_api():
 
 @currency_routes.route("/currency/form")
 def currency_form():
-    print("WEATHER FORM...")
+    print("CURRENCY FORM...")
     return render_template("currency_form.html")
 
 #@weather_routes.route("/currency/forecast", methods=["GET", "POST"])
