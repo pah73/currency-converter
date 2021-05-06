@@ -7,7 +7,7 @@ import json
 import requests
 from dotenv import load_dotenv
 
-
+from app import APP_ENV
 
 load_dotenv()
   
@@ -34,7 +34,7 @@ class Currency_convertor:
         # limiting the precision to 2 decimal places
         amount = round(amount * self.rates[to_currency], 2)
         print('{} {} = {} {}'.format(initial_amount, from_currency, amount, to_currency))
-  
+    
 # Driver code
 if __name__ == "__main__":
   
