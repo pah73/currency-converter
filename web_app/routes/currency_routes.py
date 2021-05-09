@@ -16,7 +16,9 @@ def currency_converter_api():
     from_currency = request.args.get("from_currency") or "USD"
     to_currency = request.args.get("to_currency") or "EUR"
     amount = request.args.get("amount") or "10"
+    #need some command for self 
 
+    #need to pass something first
     results = convert(from_currency=from_currency, to_currency=to_currency, amount=amount)
     if results:
         return jsonify(results)
