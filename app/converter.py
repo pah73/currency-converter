@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 #from app import APP_ENV
 
 #NOTE - This needs to eventually be passed through __init__.py. put it here so it can work while i'm testing
-APP_ENV = os.getenv("APP_ENV", default="development")
+APP_ENV = os.getenv("APP_ENV", default="production")
 
 load_dotenv()
 
