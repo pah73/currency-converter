@@ -18,7 +18,7 @@ def currency_form():
 
 #this is the route where the output from user inputs are given 
 #and the calculation is done, calling converter.py function
-@currency_routes.route("/currency/results")
+@currency_routes.route("/currency/results", methods=["GET", "POST"])
 def currency_conversion():
     print("Currency Conversion...")
 
@@ -40,27 +40,4 @@ def currency_conversion():
         return render_template("currency_results.html", base_currency=base_currency,currency_to=currency_to,amount=amount)
     else:
         return redirect("/currency/form")
-
-
-
-
-
-
-
-# @currency_routes.route("/currency.json")
-# def currency_converter_api():
-#     print("Currency Converter (API)...")
-#     print("URL PARAMS:", dict(request.args))
-    
-#     currency_from = request.args.get("currency_from") or "USD"
-#     currency_to = request.args.get("currency_to") or "EUR"
-#     amount = request.args.get("amount") or "10"
-#     #need some command for self 
-
-#     #need to pass something first
-#     results = currency_convertor(currency_from=currency_from, currency_to=currency_to, amount=amount)
-#     if results:
-#         return jsonify(results)
-#     else:
-#         return jsonify({"message":"Invalid input. Please try again"}), 404
 
