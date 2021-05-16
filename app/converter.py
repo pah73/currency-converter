@@ -25,19 +25,16 @@ def currency_convertor(currency_from,currency_to,amount):
     result=amount_in_base*(response.json()['rates'][currency_to])
     return result
 
+def exchange_rates(currency_from,currency_to):
+    exchange_rate=(response.json()['rates'][currency_to])/(response.json()['rates'][currency_from])
+    return exchange_rate
+
+
 def currency_options():
     currency_list = str(response.json()['rates'].keys())
     return currency_list
 
-# def exchange_rate(currency_from):
-#     exchange_rate=response.json()['rates'][currency_from]
-#     return exchange_rate
 
 
 response=requests.get(url)
-# base_currency=input('Enter the base currency:')
-# convert_to=input('Enter the result currency:')
-# # base_currency=input('Enter the base currency from '+str(response.json()['rates'].keys()))
-# # convert_to=input('Enter the result currency '+str(response.json()['rates'].keys()))
-# amount_to_convert=float(input("Enter the amount to convert"))
-# currency_convertor(base_currency,convert_to,amount_to_convert)
+
