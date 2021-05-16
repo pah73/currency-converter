@@ -5,7 +5,7 @@
 from flask import Blueprint, request, jsonify, render_template, flash, redirect
 
 #from app.converter import convert
-from app.converter import currency_convertor #exchange_rate
+from app.converter import currency_convertor, exchange_rates
 
 currency_routes = Blueprint("currency_routes", __name__)
 
@@ -35,12 +35,13 @@ def currency_conversion():
     amount = request_data.get("amount") or "10"
 
     results = round(currency_convertor(base_currency,currency_to,amount),2)
-    
+    exchange_rate=round(exchange_rates(base_currency,currency_to),4)
+
     #exchange_rate = exchange_rate(base_currency)
     print("Here are the results:", results)
     if results:
         flash("Successful !", "success")
-        return render_template("currency_results.html", base_currency=base_currency,currency_to=currency_to,amount=amount, results=results)
+        return render_template("currency_results.html", base_currency=base_currency,currency_to=currency_to,amount=amount, results=results, exchange_rate=exchange_rate)
     else:
         flash("Currency error. Please try again", "danger")
         return redirect("/currency/form")
