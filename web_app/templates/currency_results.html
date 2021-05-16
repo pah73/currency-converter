@@ -3,16 +3,17 @@
 
 {% block content %}
 
-    <h2>Results for {{ results["base_currency"] }} being converted to {{ results["currency_to"] }}</h2>
+    <h2>Results for {{ base_currency }} being converted to {{ currency_to }}</h2>
 
-    <p>Amount: {{ amount }}</p>
+    <p> {{base_currency}} : {{ amount }}</p>
+
+    <p> {{currency_to}}: {{ results }}</p>
+
+    <p> Exchange rate: </p>
 
     <!-- TODO: consider using a table instead of a list -->
     <!-- TODO: consider adding images using the provided icon urls -->
     <ul>
-    <!-- {% for forecast in results["hourly_forecasts"] %}
-        <li>{{ forecast["timestamp"] }} | {{ forecast["temp"] }} | {{ forecast["conditions"].upper() }}</li>
-    {% endfor %}
-    </ul> -->
+    
 
 {% endblock %}

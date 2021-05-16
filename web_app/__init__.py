@@ -10,9 +10,13 @@ from web_app.routes.currency_routes import currency_routes
 
 load_dotenv()
 
+SECRET_KEY = os.getenv("SECRET_KEY", default="super secret") # set this to something else on production!!!
+
+
 #creating app / setting up blueprint files for specific routes
 def create_app():
     app = Flask(__name__)
+    app.config["SECRET_KEY"] = SECRET_KEY
     app.register_blueprint(home_routes)
     app.register_blueprint(currency_routes)
     return app

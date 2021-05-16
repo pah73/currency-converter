@@ -19,21 +19,25 @@ url = str.__add__('http://data.fixer.io/api/latest?access_key=', CURRENCY_API_KE
 
 
 def currency_convertor(currency_from,currency_to,amount):
+    amount = float(amount)
     rate=response.json()['rates'][currency_from]
-    amount_in_base=amount/rate
+    amount_in_base=float(amount)/float(rate)
     result=amount_in_base*(response.json()['rates'][currency_to])
-    print(amount_in_base)
-    print(type(amount_in_base))
-    print(type(rate))
-    print(type(result))
-    print(rate)
-    print(result)
+    return result
+
+def currency_options():
+    currency_list = str(response.json()['rates'].keys())
+    return currency_list
+
+# def exchange_rate(currency_from):
+#     exchange_rate=response.json()['rates'][currency_from]
+#     return exchange_rate
 
 
 response=requests.get(url)
-base_currency=input('Enter the base currency:')
-convert_to=input('Enter the result currency:')
-# base_currency=input('Enter the base currency from '+str(response.json()['rates'].keys()))
-# convert_to=input('Enter the result currency '+str(response.json()['rates'].keys()))
-amount_to_convert=int(input("Enter the amount to convert"))
-currency_convertor(base_currency,convert_to,amount_to_convert)
+# base_currency=input('Enter the base currency:')
+# convert_to=input('Enter the result currency:')
+# # base_currency=input('Enter the base currency from '+str(response.json()['rates'].keys()))
+# # convert_to=input('Enter the result currency '+str(response.json()['rates'].keys()))
+# amount_to_convert=float(input("Enter the amount to convert"))
+# currency_convertor(base_currency,convert_to,amount_to_convert)
