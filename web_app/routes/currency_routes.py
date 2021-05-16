@@ -29,7 +29,7 @@ def currency_conversion():
     elif request.method == "POST":
         print("FORM DATA:", dict(request.form))
         request_data = dict(request.form)
-        
+
     base_currency = request_data.get("base_currency") or "USD"
     currency_to = request_data.get("currency_to") or "EUR"
     amount = request_data.get("amount") or "10"
@@ -38,7 +38,7 @@ def currency_conversion():
     print("Here are the results:", results)
     if results:
         flash("Successful !", "success")
-        return render_template("currency_results.html", base_currency=base_currency,currency_to=currency_to,amount=amount)
+        return render_template("currency_results.html", base_currency=base_currency,currency_to=currency_to,amount=amount, results=results)
     else:
         flash("Currency error. Please try again", "danger")
         return redirect("/currency/form")

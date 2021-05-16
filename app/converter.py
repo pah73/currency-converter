@@ -34,9 +34,9 @@ def currency_convertor(currency_from,currency_to,amount):
 
 
 response=requests.get(url)
-base_currency=input('Enter the base currency:')
-convert_to=input('Enter the result currency:')
-# base_currency=input('Enter the base currency from '+str(response.json()['rates'].keys()))
-# convert_to=input('Enter the result currency '+str(response.json()['rates'].keys()))
-amount_to_convert=float(input("Enter the amount to convert"))
-currency_convertor(base_currency,convert_to,amount_to_convert)
+# base_currency=input('Enter the base currency:')
+# convert_to=input('Enter the result currency:')
+# # base_currency=input('Enter the base currency from '+str(response.json()['rates'].keys()))
+# # convert_to=input('Enter the result currency '+str(response.json()['rates'].keys()))
+# amount_to_convert=float(input("Enter the amount to convert"))
+# currency_convertor(base_currency,convert_to,amount_to_convert)
