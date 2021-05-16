@@ -1,0 +1,28 @@
+{% extends "boostrap_layout.html" %}
+{% set active_page = "weather_form" %}
+
+{% block content %}
+
+    <h2>Currency Form</h2>
+
+    <p>Request a from currency, to currency, and amount...</p>
+
+    <form action="/weather/forecast" method="POST">
+
+        <label>From Currency:</label>
+        <input type="text" name="base_currency" placeholder="USD" value="USD">
+        <br>
+
+        <label>To Currency:</label>
+        <input type="text" name="currency_to" placeholder="EUR" value="EUR">
+        <br>
+
+        <label>Amount:</label>
+        <input type="text" name="amount" placeholder="1" value="1">
+        <br>
+
+
+        <button>Submit</button>
+    </form>
+
+{% endblock %}

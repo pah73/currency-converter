@@ -1,10 +1,14 @@
 # web_app/__init__.py
 
+import os
+from dotenv import load_dotenv
 from flask import Flask
 
 from web_app.routes.home_routes import home_routes
 from web_app.routes.currency_routes import currency_routes
 # deleted book_routes
+
+load_dotenv()
 
 #creating app / setting up blueprint files for specific routes
 def create_app():

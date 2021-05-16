@@ -4,7 +4,8 @@
 
 from flask import Blueprint, request, jsonify
 
-from app.converter import convert
+#from app.converter import convert
+from app.converter import currency_convertor
 
 currency_routes = Blueprint("currency_routes", __name__)
 
@@ -12,14 +13,14 @@ currency_routes = Blueprint("currency_routes", __name__)
 def currency_converter_api():
     print("Currency Converter (API)...")
     print("URL PARAMS:", dict(request.args))
-
-    from_currency = request.args.get("from_currency") or "USD"
-    to_currency = request.args.get("to_currency") or "EUR"
+    
+    currency_from = request.args.get("currency_from") or "USD"
+    currency_to = request.args.get("currency_to") or "EUR"
     amount = request.args.get("amount") or "10"
     #need some command for self 
 
     #need to pass something first
-    results = convert(from_currency=from_currency, to_currency=to_currency, amount=amount)
+    results = currency_convertor(currency_from=currency_from, currency_to=currency_to, amount=amount)
     if results:
         return jsonify(results)
     else:
