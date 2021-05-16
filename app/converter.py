@@ -23,14 +23,15 @@ def currency_convertor(currency_from,currency_to,amount):
     rate=response.json()['rates'][currency_from]
     amount_in_base=float(amount)/float(rate)
     result=amount_in_base*(response.json()['rates'][currency_to])
-    print(amount_in_base)
-    print(type(amount_in_base))
-    print(type(rate))
-    print(type(result))
-    print(type(amount))
-    print(rate)
-    print(result)
     return result
+
+def currency_options():
+    currency_list = str(response.json()['rates'].keys())
+    return currency_list
+
+# def exchange_rate(currency_from):
+#     exchange_rate=response.json()['rates'][currency_from]
+#     return exchange_rate
 
 
 response=requests.get(url)
