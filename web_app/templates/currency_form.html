@@ -1,5 +1,5 @@
 {% extends "boostrap_layout.html" %}
-{% set active_page = "weather_form" %}
+{% set active_page = "currency_form" %}
 
 {% block content %}
 
@@ -7,7 +7,7 @@
 
     <p>Request a from currency, to currency, and amount...</p>
 
-    <form action="/weather/forecast" method="POST">
+    <form action="/currency/results" method="POST">
 
         <label>From Currency:</label>
         <input type="text" name="base_currency" placeholder="USD" value="USD">

@@ -1,6 +1,6 @@
 # web_app/routes/home_routes.py
 
-from flask import Blueprint, request #, render_template
+from flask import Blueprint, request, render_template
 
 home_routes = Blueprint("home_routes", __name__)
 
@@ -8,18 +8,19 @@ home_routes = Blueprint("home_routes", __name__)
 @home_routes.route("/home")
 def index():
     print("HOME...")
-    return "Welcome to Paul and Sean's Currency Converter"
+    return render_template("home.html")
 
 @home_routes.route("/about")
 def about():
     print("ABOUT The Currency Converter app:...")
-    return "This is our about page"
+    return render_template("about.html")
 
-@home_routes.route("/hello")
+@home_routes.route("/options")
 def hello_world():
-    print("HELLO...", dict(request.args))
+    print("Options...", dict(request.args))
     # NOTE: `request.args` is dict-like, so below we're using the dictionary's `get()` method,
     # ... which will return None instead of throwing an error if key is not present
     # ... see also: https://www.w3schools.com/python/ref_dictionary_get.asp
-    name = request.args.get("name") or "World"
-    return f"Hello, {name}!"
+    
+    return render_template("options.html")
+    print((str(response.json()['rates'].keys())))
