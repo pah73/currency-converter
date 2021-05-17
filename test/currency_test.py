@@ -22,8 +22,6 @@ def test_currency_from_input():
   assert results == None
 
 
-def constant_exchange_rate_test():
-  results = exchange_rates(currency_from = "USD", currency_to = "USD")
-  assert results == 1
+
 
 #testing
