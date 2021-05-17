@@ -13,3 +13,4 @@ The currency form page allows the user to input symbols for the base currency an
 # Code Climate Results
 Our code climate results for code simplification grading is linked below. Code Climate awarded us with an A, having no smells or duplications
 https://codeclimate.com/github/pah73/currency-converter
+
