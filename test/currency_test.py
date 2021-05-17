@@ -9,8 +9,8 @@ CI_ENV = os.getenv("CI") == "true"
 
 #testing that the result will be zero if the amount is zero. Rates get updated every day so we wanted something that would work consistently.
 def test_constant_amount():
-    results = currency_convertor(currency_from = "USD", currency_to = "USD", amount = 1)
-    assert results == 1.0
+  results = currency_convertor(currency_from = "USD", currency_to = "USD", amount = 1)
+  assert results == 1.0
 
 #testing that nothing gets returned if the currency is invalid
 def test_currency_to_input():
@@ -24,6 +24,6 @@ def test_currency_from_input():
 
 def constant_exchange_rate_test():
   results = exchange_rates(currency_from = "USD", currency_to = "USD")
-  assert results == 1
+  assert results == 1.0
 
 #testing
