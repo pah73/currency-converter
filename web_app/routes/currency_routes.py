@@ -5,7 +5,7 @@
 from flask import Blueprint, request, jsonify, render_template, flash, redirect
 
 #from app.converter import convert
-from app.converter import currency_convertor, exchange_rates
+from app.convertor import currency_convertor, exchange_rates
 
 currency_routes = Blueprint("currency_routes", __name__)
 

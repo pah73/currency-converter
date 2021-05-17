@@ -2,8 +2,7 @@ import os
 import pytest
 
 
-
-from app.converter import currency_converter, exchange_rates
+from app.convertor import currency_convertor, exchange_rates
 
 CI_ENV = os.getenv("CI") == "true"
 
@@ -20,8 +19,8 @@ def test_currency_convertor():
 #     assert f"{DEGREE_SIGN}F" in forecast["temp"]
 
 #     # with invalid geography, fails gracefully and returns nothing:
-#     invalid_results = get_hourly_forecasts(country_code="US", zip_code="OOPS")
-#     assert invalid_results == None
+    invalid_results = currency_convertor(currency_from="USD",currency_to="OOOPS",amount=10)
+    assert invalid_results == None
 
 # def test_hour_formatting():
 #     assert format_hour("2021-03-29T21:00:00-04:00") == "21:00"
