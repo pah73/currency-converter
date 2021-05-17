@@ -9,3 +9,7 @@ Once on the app there is a welcome page. In the top right corner of the welcome 
 
 # Currency Form Page
 The currency form page allows the user to input symbols for the base currency and what currency you want to convert to as well as the amount you want converted. After pressing the submit button, a results page will appear showing how much of the base currency is in the new currency. 
+
+# Code Climate Results
+Our code climate results for code simplification grading is linked below. Code Climate awarded us with an A, having no smells or duplications
+https://codeclimate.com/github/pah73/currency-converter
