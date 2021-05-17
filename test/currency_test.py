@@ -1,13 +1,15 @@
+import os
+import pytest
 
-# import os
-# import pytest
 
-# from app.converter import currency_converter, exchange_rates
 
-# CI_ENV = os.getenv("CI") == "true"
+from app.converter import currency_converter, exchange_rates
 
-# @pytest.mark.skipif(CI_ENV==True, reason="to avoid issuing HTTP requests on the CI server")
-# def test_hourly_forecasts():
+CI_ENV = os.getenv("CI") == "true"
+
+@pytest.mark.skipif(CI_ENV==True, reason="to avoid issuing HTTP requests on the CI server")
+
+def test_currency_convertor():
 #     # with valid geography, returns the city name and forecast info:
 #     results = get_hourly_forecasts(country_code="US", zip_code="20057")
 #     assert results["city_name"] == "Washington, DC"

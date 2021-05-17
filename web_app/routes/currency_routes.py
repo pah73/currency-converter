@@ -46,3 +46,5 @@ def currency_conversion():
         flash("Currency error. Please try again", "danger")
         return redirect("/currency/form")
 
+
+#https://fixer.io/symbols for currency list
