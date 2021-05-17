@@ -32,14 +32,25 @@ def currency_conversion():
 
     base_currency = request_data.get("base_currency") or "USD"
     currency_to = request_data.get("currency_to") or "EUR"
-    amount = request_data.get("amount") or "10"
+    amount = request_data.get("amount") or 10
 
-    results = round(currency_convertor(base_currency,currency_to,amount),2)
-    exchange_rate=round(exchange_rates(base_currency,currency_to),4)
+    # only allow floats to pass through.
+    try:
+        float(amount)
+    except ValueError:
+        print("not a float")
+        flash("Currency error. Please try again", "danger")
+        return redirect("/currency/form")
 
+    results = currency_convertor(base_currency,currency_to,amount)
+    exchange_rate=exchange_rates(base_currency,currency_to)
     #exchange_rate = exchange_rate(base_currency)
     print("Here are the results:", results)
+    print(type(amount))
+
     if results:
+        results = round(results,2)
+        exchange_rate = round(exchange_rate,2)
         flash("Successful !", "success")
         return render_template("currency_results.html", base_currency=base_currency,currency_to=currency_to,amount=amount, results=results, exchange_rate=exchange_rate)
     else:
